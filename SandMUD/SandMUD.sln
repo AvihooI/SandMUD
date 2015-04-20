@@ -5,6 +5,13 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Model", "Model\Model.modelproj", "{B1D3DF36-E7D3-46D9-B0A6-B31AB39F92D0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Process", "Process", "{D2CB223E-9678-4D2A-8E80-34EFB67AC058}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Cactus\Cactus Process.txt = ..\..\..\Cactus\Cactus Process.txt
+		Idea.txt = Idea.txt
+		Learn.txt = Learn.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

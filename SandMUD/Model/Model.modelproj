@@ -22,13 +22,9 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
-    <Content Include="Process\Cactus Process.txt">
-      <SubType>Content</SubType>
-    </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\Model.uml">
       <SubType>Content</SubType>
     </Content>
-    <Folder Include="Process" />
   </ItemGroup>
 </Project>
