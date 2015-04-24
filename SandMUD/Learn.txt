@@ -1,5 +1,6 @@
 Learning backlog:
-a. TCP/IP Networking with C#
-b. Multiple connection handling
+a. TCP/IP Networking with C# (Progress: DONE)
+b. Multiple connection handling (Progress: 90%)
 c. Proper multi-threading (maybe async-await)
 d. Relevant design patterns/architecture
+e. ANSI color for MUDs
