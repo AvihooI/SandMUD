@@ -1,0 +1,5 @@
+Learning backlog:
+a. TCP/IP Networking with C#
+b. Multiple connection handling
+c. Proper multi-threading (maybe async-await)
+d. Relevant design patterns/architecture

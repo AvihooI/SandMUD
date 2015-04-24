@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Model", "Model\Model.modelproj", "{B1D3DF36-E7D3-46D9-B0A6-B31AB39F92D0}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Process", "Process", "{D2CB223E-9678-4D2A-8E80-34EFB67AC058}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\Cactus\Cactus Process.txt = ..\..\..\Cactus\Cactus Process.txt
@@ -12,18 +10,41 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Process", "Process", "{D2CB
 		Learn.txt = Learn.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Learning Projects", "Learning Projects", "{49AE5C07-1FB3-4DEE-AC51-C9F6040366DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkProgrammingLearn", "NetworkProgrammingLearn\NetworkProgrammingLearn.csproj", "{D549B994-B8B4-44E6-8978-57BACFFA4104}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prototypes", "Prototypes", "{440723DD-CC91-472B-99A4-F89E761CB64A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandTcpServer", "SandTcpServer\SandTcpServer.csproj", "{AFB0A7E3-F00B-4032-8A61-A65032D70F26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandTcpServerTest", "SandTcpServerTest\SandTcpServerTest.csproj", "{C98ACAEF-1B71-4B5C-A3FE-7E38A939628C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B1D3DF36-E7D3-46D9-B0A6-B31AB39F92D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B1D3DF36-E7D3-46D9-B0A6-B31AB39F92D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B1D3DF36-E7D3-46D9-B0A6-B31AB39F92D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B1D3DF36-E7D3-46D9-B0A6-B31AB39F92D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D549B994-B8B4-44E6-8978-57BACFFA4104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D549B994-B8B4-44E6-8978-57BACFFA4104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D549B994-B8B4-44E6-8978-57BACFFA4104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D549B994-B8B4-44E6-8978-57BACFFA4104}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFB0A7E3-F00B-4032-8A61-A65032D70F26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFB0A7E3-F00B-4032-8A61-A65032D70F26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFB0A7E3-F00B-4032-8A61-A65032D70F26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFB0A7E3-F00B-4032-8A61-A65032D70F26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C98ACAEF-1B71-4B5C-A3FE-7E38A939628C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C98ACAEF-1B71-4B5C-A3FE-7E38A939628C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C98ACAEF-1B71-4B5C-A3FE-7E38A939628C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C98ACAEF-1B71-4B5C-A3FE-7E38A939628C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D549B994-B8B4-44E6-8978-57BACFFA4104} = {49AE5C07-1FB3-4DEE-AC51-C9F6040366DE}
+		{AFB0A7E3-F00B-4032-8A61-A65032D70F26} = {440723DD-CC91-472B-99A4-F89E761CB64A}
+		{C98ACAEF-1B71-4B5C-A3FE-7E38A939628C} = {440723DD-CC91-472B-99A4-F89E761CB64A}
 	EndGlobalSection
 EndGlobal
