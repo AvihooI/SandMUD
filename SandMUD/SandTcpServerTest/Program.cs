@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using SandTcpServer;
+using SandDataGenerator;
 
 namespace SandTcpServerTest
 {
@@ -26,7 +27,28 @@ namespace SandTcpServerTest
             if (str.ToLower() == "quit")
                 server.DisconnectClient(e.ClientHashCode);
 
-            server.SendData(e.ClientHashCode, e.Data);
+            AnsiStyle style = new AnsiStyle();
+            style.ForegroundColor = AnsiColor.Red;
+            style.Bold = true;
+            style.Italics = true;
+            style.Underline = true;
+
+            var dataGenerator = new DataGenerator();
+
+            dataGenerator.SetStyle(style);
+            dataGenerator.AddText(str);
+            dataGenerator.AddText(" ");
+
+            style.ForegroundColor = AnsiColor.Red;
+            style.Bold = false;
+            style.Italics = false;
+            style.Underline = false;
+            style.Blink = true;
+
+            dataGenerator.SetStyle(style);
+            dataGenerator.AddText(str);
+
+            server.SendData(e.ClientHashCode, dataGenerator.GetData());
         }
 
         static void OnDisconnection(object sender, ServerEventArgs e)

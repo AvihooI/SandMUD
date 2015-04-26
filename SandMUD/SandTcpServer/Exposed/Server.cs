@@ -7,6 +7,10 @@ using System.Collections.Concurrent;
 
 namespace SandTcpServer
 {
+    /*TODO:
+     * a) implement server configuration and add a constructor that uses that configuration
+     * b) override GetHashCode() for client handlers (to make sure the result is unique)
+     */
     public sealed class Server
     {
         private TcpListener _server;
