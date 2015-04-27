@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace SandDataGenerator
 { 
     /*TODO:
-     * a) implement all possible ANSI stuff
-     * b) add direct property access for style elements within the generator
+     * a) add direct property access for style elements within the generator
     */
     public class DataGenerator
     {
@@ -118,5 +117,98 @@ namespace SandDataGenerator
         {
             _currentBuffer.Clear();
         }
+
+        //Added properties
+        public AnsiColor ForegroundColor
+        {
+            get
+            {
+                return _currentStyle.ForegroundColor;
+            }
+            set
+            {
+                var newStyle = _currentStyle;
+                newStyle.ForegroundColor = value;
+
+                SetStyle(newStyle);
+            }
+        }
+
+        public AnsiColor BackgroundColor
+        {
+            get
+            {
+                return _currentStyle.BackgroundColor;
+            }
+            set
+            {
+                var newStyle = _currentStyle;
+                newStyle.BackgroundColor = value;
+
+                SetStyle(newStyle);
+            }
+        }
+
+        public bool Blink
+        {
+            get
+            {
+                return _currentStyle.Blink;
+            }
+            set
+            {
+                var newStyle = _currentStyle;
+                newStyle.Blink = value;
+
+                SetStyle(newStyle);
+            }
+        }
+
+        public bool Bold
+        {
+            get
+            {
+                return _currentStyle.Bold;
+            }
+            set
+            {
+                var newStyle = _currentStyle;
+                newStyle.Bold = value;
+
+                SetStyle(newStyle);
+            }
+        }
+
+        public bool Italics
+        {
+            get
+            {
+                return _currentStyle.Italics;
+            }
+            set
+            {
+                var newStyle = _currentStyle;
+                newStyle.Italics = value;
+
+                SetStyle(newStyle);
+            }
+        }
+
+
+        public bool Underline
+        {
+            get
+            {
+                return _currentStyle.Underline;
+            }
+            set
+            {
+                var newStyle = _currentStyle;
+                newStyle.Underline = value;
+
+                SetStyle(newStyle);
+            }
+        }
+
     }
 }

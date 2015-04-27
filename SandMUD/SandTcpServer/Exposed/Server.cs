@@ -39,12 +39,19 @@ namespace SandTcpServer
             //From then on, the client handler does everything 
             while (_activated) 
             {
-                var newClient = _server.AcceptTcpClient();
-
-                var newHandler = new ClientHandler(newClient, serverCallback);
+                if (_server.Pending())
+                {
+                    
+                    new ClientHandler(_server.AcceptTcpClient(), serverCallback);
+                }
+                else
+                {
+                    Thread.Sleep(10);
+                }
             }
 
             _server.Stop(); //Stop the server - since we're no longer activated
+            _listenThread.Abort();
 
         }
 
@@ -112,6 +119,8 @@ namespace SandTcpServer
             {
                 item.Value.Disconnect();
             }
+
+            
         }
 
         //Disconnect a specific client
@@ -133,6 +142,26 @@ namespace SandTcpServer
             if(_clientHandlers.TryGetValue(clientHashCode, out handler))
             {
                 handler.SendData(data);
+            }
+        }
+
+        //Added property: activated - tells if the server is activated or not
+
+        public bool Activated
+        {
+            get
+            {
+                return _activated;
+            }
+        }
+
+        //Added property: events pending - tells if the server has event raising processes waiting
+
+        public bool EventsPending
+        {
+            get
+            {
+                return !_messages.IsEmpty;
             }
         }
     }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SandDataParser
+namespace SandDataProcessor
 {
-    public static class DataParser
+    public static class DataProcessor
     {
         public static IEnumerable<byte> DefaultProcess(IEnumerable<byte> input)
         {
@@ -18,7 +18,7 @@ namespace SandDataParser
 
             return result;
         }
-        public static byte[] Parse(IEnumerable<byte> data, IEnumerable<Func<IEnumerable<byte>, IEnumerable<byte>>> pipeline)
+        public static byte[] Process(IEnumerable<byte> data, IEnumerable<Func<IEnumerable<byte>, IEnumerable<byte>>> pipeline)
         {
             IEnumerable<byte> result = data;
 

@@ -7,19 +7,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Process", "Process", "{D2CB
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\Cactus\Cactus Process.txt = ..\..\..\Cactus\Cactus Process.txt
 		Learn.txt = Learn.txt
+		PrototypePhase.txt = PrototypePhase.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prototypes", "Prototypes", "{440723DD-CC91-472B-99A4-F89E761CB64A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandTcpServer", "SandTcpServer\SandTcpServer.csproj", "{AFB0A7E3-F00B-4032-8A61-A65032D70F26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandTcpServerTest", "SandTcpServerTest\SandTcpServerTest.csproj", "{C98ACAEF-1B71-4B5C-A3FE-7E38A939628C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandDataGenerator", "SandDataGenerator\SandDataGenerator.csproj", "{66450091-084A-43B0-A4F3-F9AFA8D5E3CE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Temporary", "Temporary", "{0A524AC1-42C3-4F8A-8017-C5241237C4D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandDataParser", "SandDataParser\SandDataParser.csproj", "{80663B3B-277C-4EF0-8807-3CFFF2E16765}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandDataProcessor", "SandDataParser\SandDataProcessor.csproj", "{80663B3B-277C-4EF0-8807-3CFFF2E16765}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandChatTest", "SandChatTest\SandChatTest.csproj", "{6C108B7E-2D3E-4502-A82E-35AB7926423B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +32,6 @@ Global
 		{AFB0A7E3-F00B-4032-8A61-A65032D70F26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFB0A7E3-F00B-4032-8A61-A65032D70F26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFB0A7E3-F00B-4032-8A61-A65032D70F26}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C98ACAEF-1B71-4B5C-A3FE-7E38A939628C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C98ACAEF-1B71-4B5C-A3FE-7E38A939628C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C98ACAEF-1B71-4B5C-A3FE-7E38A939628C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C98ACAEF-1B71-4B5C-A3FE-7E38A939628C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{66450091-084A-43B0-A4F3-F9AFA8D5E3CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{66450091-084A-43B0-A4F3-F9AFA8D5E3CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66450091-084A-43B0-A4F3-F9AFA8D5E3CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,14 +40,18 @@ Global
 		{80663B3B-277C-4EF0-8807-3CFFF2E16765}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80663B3B-277C-4EF0-8807-3CFFF2E16765}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80663B3B-277C-4EF0-8807-3CFFF2E16765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C108B7E-2D3E-4502-A82E-35AB7926423B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C108B7E-2D3E-4502-A82E-35AB7926423B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C108B7E-2D3E-4502-A82E-35AB7926423B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C108B7E-2D3E-4502-A82E-35AB7926423B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AFB0A7E3-F00B-4032-8A61-A65032D70F26} = {440723DD-CC91-472B-99A4-F89E761CB64A}
-		{C98ACAEF-1B71-4B5C-A3FE-7E38A939628C} = {0A524AC1-42C3-4F8A-8017-C5241237C4D4}
 		{66450091-084A-43B0-A4F3-F9AFA8D5E3CE} = {440723DD-CC91-472B-99A4-F89E761CB64A}
 		{80663B3B-277C-4EF0-8807-3CFFF2E16765} = {440723DD-CC91-472B-99A4-F89E761CB64A}
+		{6C108B7E-2D3E-4502-A82E-35AB7926423B} = {0A524AC1-42C3-4F8A-8017-C5241237C4D4}
 	EndGlobalSection
 EndGlobal
