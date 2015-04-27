@@ -1,0 +1,23 @@
+Prototype Phase Backlog:
+
+SandTcpServer:
+	a) seems to be functionally complete
+	b) requires further development and testing to support a significantly high amount of connections
+	c) needs to have some sort of server configuration
+	d) if adopted, will move out of prototype phase to pre-production which will involve more formal documentation
+
+SandDataGenerator:
+	a) does its job
+	b) requires further testing as well as some refactoring
+	c) will require re-implementation to work more efficiently
+
+SandDataProcessor: 
+	a) works as expected
+	b) very premature at the moment and requires more understanding of its responsibilities
+
+Solution wide points:
+
+a) SandDataGenerator and SandDataProcessor need to be unified to a single project called SandData (though keep their namespaces)
+b) Projects need to have a shared namespace called "SandMUD.SandInfrastructure" which basically encompasses the most bottom layer in the MUD system
+c) Should consider a persistence system under the infrastructure layer
+d) Once the infrastructure layer is done (the useful code is refactored, extracted, properly documented), the prototyping phase will be over and the modelling phase will begin
