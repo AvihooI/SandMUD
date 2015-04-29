@@ -1,1 +1,0 @@
-SandMUD is a MUD platform. It will be designed to be modular so that 

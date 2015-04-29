@@ -1,20 +1,38 @@
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 
 namespace SandTcpServer
 {
+    internal static class ConnectionIdentiferProducer
+    {
+        static int _nextIdentifier = 1;
+
+        public static int NewIdentifier()
+        {
+            int result = _nextIdentifier;
+
+            _nextIdentifier++;
+
+            return result;
+        }
+
+    }
+
     internal sealed class ClientHandler
     {
-        byte[] buffer;
+        byte[] _buffer;
 
         private TcpClient _client;
         private Thread _handlerThread;
         private ConcurrentQueue<Byte[]> _dataToSendQueue;
         private DateTime _lastCheck;
         Action<CallbackMessage> _serverCallback;
+
+        private int _id;
 
         //The client handler loop (to run in a separate thread), initiated upon the construction of the client handler object
         private void handlerLoop()
@@ -40,11 +58,11 @@ namespace SandTcpServer
                 if (_client.Available > 0)
                 {
                     //Get the data into our buffer
-                    int bytesReceived = stream.Read(buffer, 0, buffer.Length);
+                    int bytesReceived = stream.Read(_buffer, 0, _buffer.Length);
                     //Create an array with the appropriate size
                     byte[] receivedData = new byte[bytesReceived];
                     //Copy from the buffer to that array
-                    Array.Copy(buffer, receivedData, bytesReceived);
+                    Array.Copy(_buffer, receivedData, bytesReceived);
                     //Use the callback to dispatch the data
                     _serverCallback(new CallbackMessage(CallbackMessageType.DataReceived, this, receivedData));
                 }
@@ -100,7 +118,9 @@ namespace SandTcpServer
 
             _lastCheck = DateTime.Now; //Set the lastCheck to now (this is responsible for pinging when there's no connection activity)
 
-            buffer = new byte[_client.ReceiveBufferSize]; //We use this buffer to receive data
+            _buffer = new byte[_client.ReceiveBufferSize]; //We use this buffer to receive data
+
+            _id = ConnectionIdentiferProducer.NewIdentifier();
         }
 
         //This property gives the connection end point (IP + port usually)
@@ -123,6 +143,12 @@ namespace SandTcpServer
         public void SendData(byte[] data)
         {
             _dataToSendQueue.Enqueue(data);
+        }
+
+        //Override of GetHashCode to guarrantee uniqueness
+        public override int GetHashCode()
+        {
+            return _id;
         }
     }
 }

@@ -24,7 +24,9 @@ namespace SandChatTest
 
             InitializeComponent();
 
-            server = new Server(23);
+            ServerConfig sconfig = new ServerConfig(23, false, 1);
+
+            server = new Server(sconfig);
 
             server.ClientConnected += OnConnection;
             server.ClientDisconnected += OnDisconnection;

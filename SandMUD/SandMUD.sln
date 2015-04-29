@@ -6,7 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Process", "Process", "{D2CB223E-9678-4D2A-8E80-34EFB67AC058}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\Cactus\Cactus Process.txt = ..\..\..\Cactus\Cactus Process.txt
-		Learn.txt = Learn.txt
 		PrototypePhase.txt = PrototypePhase.txt
 	EndProjectSection
 EndProject
@@ -21,6 +20,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandDataProcessor", "SandDataParser\SandDataProcessor.csproj", "{80663B3B-277C-4EF0-8807-3CFFF2E16765}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandChatTest", "SandChatTest\SandChatTest.csproj", "{6C108B7E-2D3E-4502-A82E-35AB7926423B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pre-Production", "Pre-Production", "{3E6B00BA-E91B-4502-8C3E-05D492E7325A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandPersistence", "SandPersistence\SandPersistence.csproj", "{24E21A43-0F20-48B2-9D6B-F5B7BE33D54C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,14 +47,19 @@ Global
 		{6C108B7E-2D3E-4502-A82E-35AB7926423B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C108B7E-2D3E-4502-A82E-35AB7926423B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C108B7E-2D3E-4502-A82E-35AB7926423B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24E21A43-0F20-48B2-9D6B-F5B7BE33D54C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24E21A43-0F20-48B2-9D6B-F5B7BE33D54C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24E21A43-0F20-48B2-9D6B-F5B7BE33D54C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24E21A43-0F20-48B2-9D6B-F5B7BE33D54C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{AFB0A7E3-F00B-4032-8A61-A65032D70F26} = {440723DD-CC91-472B-99A4-F89E761CB64A}
+		{AFB0A7E3-F00B-4032-8A61-A65032D70F26} = {3E6B00BA-E91B-4502-8C3E-05D492E7325A}
 		{66450091-084A-43B0-A4F3-F9AFA8D5E3CE} = {440723DD-CC91-472B-99A4-F89E761CB64A}
 		{80663B3B-277C-4EF0-8807-3CFFF2E16765} = {440723DD-CC91-472B-99A4-F89E761CB64A}
 		{6C108B7E-2D3E-4502-A82E-35AB7926423B} = {0A524AC1-42C3-4F8A-8017-C5241237C4D4}
+		{24E21A43-0F20-48B2-9D6B-F5B7BE33D54C} = {440723DD-CC91-472B-99A4-F89E761CB64A}
 	EndGlobalSection
 EndGlobal

@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace SandDataGenerator
 { 
-    /*TODO:
-     * a) add direct property access for style elements within the generator
-    */
     public class DataGenerator
     {
         private List<byte> _currentBuffer;

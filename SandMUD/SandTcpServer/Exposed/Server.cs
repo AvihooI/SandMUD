@@ -7,15 +7,27 @@ using System.Collections.Concurrent;
 
 namespace SandTcpServer
 {
-    /*TODO:
-     * a) implement server configuration and add a constructor that uses that configuration
-     * b) override GetHashCode() for client handlers (to make sure the result is unique)
-     */
+    public struct ServerConfig
+    {
+        public int Port;
+        public bool Local;
+        public uint MaximalConnections;
+
+        public ServerConfig(int port = 23, bool local = false, uint maximalConnections = 0)
+        {
+            Port = port;
+            Local = local;
+            MaximalConnections = maximalConnections;
+        }
+
+    }
+
     public sealed class Server
     {
         private TcpListener _server;
         private Thread _listenThread;
         private bool _activated;
+        uint _maximalConnections;
         Dictionary<int, ClientHandler> _clientHandlers;
         ConcurrentQueue<CallbackMessage> _messages;
 
@@ -41,8 +53,17 @@ namespace SandTcpServer
             {
                 if (_server.Pending())
                 {
-                    
-                    new ClientHandler(_server.AcceptTcpClient(), serverCallback);
+                    //Added: maximal connections based on server configuration
+                    var tcpClient = _server.AcceptTcpClient();
+
+                    if ((_maximalConnections == 0) || (_clientHandlers.Count < _maximalConnections))
+                    {
+                        new ClientHandler(tcpClient, serverCallback);
+                    }
+                    else
+                    {
+                        tcpClient.Close();
+                    }
                 }
                 else
                 {
@@ -55,16 +76,20 @@ namespace SandTcpServer
 
         }
 
-        //The server object only requires a port to listen to
-        public Server(int port)
+        
+        public Server(ServerConfig serverConfig)
         {
-            var ipEndPoint = new IPEndPoint(IPAddress.Any, port);
+            var ipEndPoint = new IPEndPoint(serverConfig.Local? IPAddress.Loopback: IPAddress.Any, serverConfig.Port);
             _clientHandlers = new Dictionary<int, ClientHandler>();
             _messages = new ConcurrentQueue<CallbackMessage>();
-
+            _maximalConnections = serverConfig.MaximalConnections;
             _server = new TcpListener(ipEndPoint);
-
         }
+
+        public Server(int port) : this(new ServerConfig(port)) { }
+
+        public Server() : this(new ServerConfig()) { }
+
 
         //The activate method actually activates the listening thread and accepts new connections
         public void Activate()
