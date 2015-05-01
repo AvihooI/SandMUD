@@ -37,11 +37,11 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exposed\ServerEventArgs.cs" />
-    <Compile Include="Internal\CallbackMessage.cs" />
-    <Compile Include="Internal\ClientHandler.cs" />
+    <Compile Include="CallbackMessage.cs" />
+    <Compile Include="ClientHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Exposed\Server.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="ServerEventArgs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,7 +1,3 @@
-using System;
-using System.Drawing;
-using System.Text;
-
 namespace SandDataGenerator
 {
     public enum AnsiColor
@@ -16,17 +12,18 @@ namespace SandDataGenerator
         White = 7,
         Default = 8
     }
+
     public struct AnsiStyle
     {
-        public AnsiColor ForegroundColor;
         public AnsiColor BackgroundColor;
         public bool Blink;
         public bool Bold;
+        public AnsiColor ForegroundColor;
         public bool Italics;
         public bool Underline;
 
         public AnsiStyle(AnsiColor foregroundColor = AnsiColor.White, AnsiColor backgroundColor = AnsiColor.Black,
-            bool blink = false,  bool bold = false, bool italics = false , bool underline = false)
+            bool blink = false, bool bold = false, bool italics = false, bool underline = false)
         {
             ForegroundColor = foregroundColor;
             BackgroundColor = backgroundColor;
@@ -35,7 +32,5 @@ namespace SandDataGenerator
             Italics = italics;
             Underline = underline;
         }
-
-        
     }
 }

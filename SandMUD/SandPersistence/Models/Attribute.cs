@@ -1,42 +1,41 @@
-
-namespace SandPersistence
+namespace SandPersistence.Models
 {
     public interface IAttribute
     {
-        int AttributeID { get; set; }
+        int AttributeId { get; set; }
         string AttributeName { get; set; }
         string AttributeValue { get; set; }
     }
 
     public class PlayerCharacterAttribute : IAttribute
     {
-        public int AttributeID { get; set; }
+        public int PlayerCharacterId { get; set; }
+        public int AttributeId { get; set; }
         public string AttributeName { get; set; }
         public string AttributeValue { get; set; }
-        public int PlayerCharacterID { get; set; }
     }
 
     public class NpcAttribute : IAttribute
     {
-        public int AttributeID { get; set; }
+        public int NpcId { get; set; }
+        public int AttributeId { get; set; }
         public string AttributeName { get; set; }
         public string AttributeValue { get; set; }
-        public int NpcID { get; set; }
     }
 
-    public class ItemAttribute: IAttribute
+    public class ItemAttribute : IAttribute
     {
-        public int AttributeID { get; set; }
+        public int ItemId { get; set; }
+        public int AttributeId { get; set; }
         public string AttributeName { get; set; }
         public string AttributeValue { get; set; }
-        public int ItemID { get; set; }
     }
 
-    public class RoomAttribute: IAttribute
+    public class RoomAttribute : IAttribute
     {
-        public int AttributeID { get; set; }
+        public int RoomId { get; set; }
+        public int AttributeId { get; set; }
         public string AttributeName { get; set; }
         public string AttributeValue { get; set; }
-        public int RoomID { get; set; }
     }
 }

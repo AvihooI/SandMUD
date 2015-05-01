@@ -1,11 +1,10 @@
-
 using System.Collections.Generic;
 
-namespace SandPersistence
+namespace SandPersistence.Models
 {
     public class Room
     {
-        public int RoomID { get; set; }
+        public int RoomId { get; set; }
         public string RoomName { get; set; }
         public string RoomDescription { get; set; }
         public List<RoomExit> Exits { get; set; }
@@ -14,8 +13,7 @@ namespace SandPersistence
     public class RoomExit
     {
         public string Direction;
-        public int RoomID;
-
-        public int EntranceRoomID;
+        public int EntranceRoomId;
+        public int RoomId;
     }
 }

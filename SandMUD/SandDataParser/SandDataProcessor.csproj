@@ -7,8 +7,8 @@
     <ProjectGuid>{80663B3B-277C-4EF0-8807-3CFFF2E16765}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SandDataParser</RootNamespace>
-    <AssemblyName>SandDataParser</AssemblyName>
+    <RootNamespace>SandDataProcessor</RootNamespace>
+    <AssemblyName>SandDataProcessor</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -35,7 +35,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exposed\DataProcessor.cs" />
+    <Compile Include="DataProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

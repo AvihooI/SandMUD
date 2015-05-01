@@ -1,5 +1,3 @@
-using System;
-
 namespace SandTcpServer
 {
     //An enum for the three possible callback messages returned from the client handler
@@ -7,7 +5,7 @@ namespace SandTcpServer
     {
         Connected,
         Disconnected,
-        DataReceived,
+        DataReceived
     };
 
     //The CallBack message struct that contains the callback type, the client handler (typically the one who called the callback) and the associated data (as a byte array)
@@ -15,9 +13,9 @@ namespace SandTcpServer
     {
         public CallbackMessageType CallbackMessageType;
         public ClientHandler ClientHandler;
-        public Byte[] Data;
+        public byte[] Data;
 
-        public CallbackMessage(CallbackMessageType callbackMessageType, ClientHandler clientHandler, Byte[] data = null)
+        public CallbackMessage(CallbackMessageType callbackMessageType, ClientHandler clientHandler, byte[] data = null)
         {
             CallbackMessageType = callbackMessageType;
             ClientHandler = clientHandler;

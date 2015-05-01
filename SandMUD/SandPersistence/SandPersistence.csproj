@@ -48,12 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassModels\Account.cs" />
-    <Compile Include="ClassModels\Attribute.cs" />
-    <Compile Include="ClassModels\Character.cs" />
-    <Compile Include="ClassModels\Item.cs" />
-    <Compile Include="ClassModels\Room.cs" />
-    <Compile Include="ClassModels\Script.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Attribute.cs" />
+    <Compile Include="Models\Character.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\Script.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
