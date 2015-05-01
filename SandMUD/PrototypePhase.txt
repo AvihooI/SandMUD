@@ -9,10 +9,15 @@ SandDataGenerator:
 	a) does its job
 	b) requires further testing as well as some refactoring
 	c) will require re-implementation to work more efficiently
+	d) needs to be renamed to SandANSI
 
 SandDataProcessor: 
 	a) works as expected
 	b) very premature at the moment and requires more understanding of its responsibilities
+	c) should be dropped because the issues it solves can be addressed with LINQ
+
+SandModel:
+	a) contains the mud model entities
 
 SandPersistence:
 	a) needs some thinking as to what exactly its responsibilities need to be

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using SandDataGenerator;
-using SandDataProcessor;
 using SandTcpServer;
 
 namespace SandChatTest
@@ -30,17 +30,17 @@ namespace SandChatTest
 
         private void OnDataReceived(object sender, ServerEventArgs e)
         {
-            var dg = new DataGenerator();
+            var dg = new AnsiGenerator();
 
-            var data = DataProcessor.Process(e.Data, DataProcessor.DefaultPipeline);
+            var data = e.Data.Where(b => (b == 13) || (b > 31 && b < 127)).ToArray();
 
             var str = e.ClientEndPoint + ": " + Encoding.Default.GetString(data);
 
             dg.AddText(str);
 
-            foreach (var c in _connections)
+            foreach (var c in _connections.Where(c => c != e.ClientHashCode))
             {
-                if (c != e.ClientHashCode) _server.SendData(c, dg.GetData());
+                _server.SendData(c, dg.GetData());
             }
         }
 

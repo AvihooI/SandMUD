@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("SandDataParser")]
+[assembly: AssemblyTitle("SandModel")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SandDataParser")]
+[assembly: AssemblyProduct("SandModel")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -22,7 +22,7 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 
-[assembly: Guid("028c7b3e-1f90-4c81-b152-a59433d3129a")]
+[assembly: Guid("5002f4ef-5688-41dd-8d15-99a649dea56a")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -3,12 +3,12 @@ using System.Text;
 
 namespace SandDataGenerator
 {
-    public class DataGenerator
+    public class AnsiGenerator
     {
         private readonly List<byte> _currentBuffer;
         private AnsiStyle _currentStyle;
 
-        public DataGenerator()
+        public AnsiGenerator()
         {
             _currentBuffer = new List<byte>();
             _currentStyle = new AnsiStyle();
@@ -89,14 +89,12 @@ namespace SandDataGenerator
 
         private static IEnumerable<byte> GenerateControlCode(int code)
         {
-            var result = new List<byte>();
+            //ASCII for Escape + ASCII for '['
 
-            result.Add(27); //ASCII for Escape
-            result.Add(91); //ASCII for '['
+            var result = new List<byte> {27, 91};
 
-            var codeBytes = Encoding.ASCII.GetBytes(code.ToString());
-                //Create the appropriate code number (ascii equivalent - one or two bytes possible)
-            result.AddRange(codeBytes); //Add to the result
+            //Create the appropriate code number (ascii equivalent - one or two bytes possible)
+            result.AddRange(Encoding.ASCII.GetBytes(code.ToString())); //Add to the result
 
             result.Add(109); //ASCII for 'm'
 
@@ -124,37 +122,25 @@ namespace SandDataGenerator
             //Blink
             if (oldStyle.Blink != newStyle.Blink)
             {
-                if (newStyle.Blink)
-                    result.AddRange(GenerateControlCode(5));
-                else
-                    result.AddRange(GenerateControlCode(25));
+                result.AddRange(newStyle.Blink ? GenerateControlCode(5) : GenerateControlCode(25));
             }
 
             //Bold
             if (oldStyle.Bold != newStyle.Bold)
             {
-                if (newStyle.Bold)
-                    result.AddRange(GenerateControlCode(1));
-                else
-                    result.AddRange(GenerateControlCode(22));
+                result.AddRange(newStyle.Bold ? GenerateControlCode(1) : GenerateControlCode(22));
             }
 
             //Italics
             if (oldStyle.Italics != newStyle.Italics)
             {
-                if (newStyle.Italics)
-                    result.AddRange(GenerateControlCode(3));
-                else
-                    result.AddRange(GenerateControlCode(23));
+                result.AddRange(newStyle.Italics ? GenerateControlCode(3) : GenerateControlCode(23));
             }
 
             //Underline
             if (oldStyle.Underline != newStyle.Underline)
             {
-                if (newStyle.Underline)
-                    result.AddRange(GenerateControlCode(4));
-                else
-                    result.AddRange(GenerateControlCode(24));
+                result.AddRange(newStyle.Underline ? GenerateControlCode(4) : GenerateControlCode(24));
             }
 
             return result;
