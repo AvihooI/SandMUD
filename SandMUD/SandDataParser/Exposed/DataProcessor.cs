@@ -8,7 +8,7 @@ namespace SandDataProcessor
 {
     public static class DataProcessor
     {
-        public static IEnumerable<byte> DefaultProcess(IEnumerable<byte> input)
+        public static IEnumerable<byte> InputClearingProcess(IEnumerable<byte> input)
         {
             var result = new List<byte>();
 
@@ -22,11 +22,11 @@ namespace SandDataProcessor
         {
             IEnumerable<byte> result = data;
 
-            foreach (var p in pipeline)
+            foreach (var process in pipeline)
             {
-                result = p(result);
+                result = process(result);
             }
-
+            
             return result.ToArray();
         }
 
@@ -35,7 +35,7 @@ namespace SandDataProcessor
             get
             {
                 var result = new List<Func<IEnumerable<byte>, IEnumerable<byte>>>();
-                result.Add(DefaultProcess);
+                result.Add(InputClearingProcess);
                 return result;
             }
         }
