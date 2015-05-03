@@ -1,0 +1,49 @@
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
+using SandModel;
+
+namespace SandPersistence
+{
+    public class SandDbContext : DbContext
+    {
+        public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<Character> Characters { get; set; }
+        public virtual DbSet<TemplateItem> TemplateItems { get; set; }
+        public virtual DbSet<InventoryItem> InventoryItems { get; set; }
+        public virtual DbSet<Npc> Npcs { get; set; }
+        public virtual DbSet<PlayerCharacter> PlayerCharacters { get; set; }
+        public virtual DbSet<Room> Rooms { get; set; }
+        public virtual DbSet<Script> Scripts { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Account>().Property(p => p.Username)
+                .IsRequired()
+                .HasMaxLength(15);
+                //Usernames are required and have a maximum length of 15
+            modelBuilder.Entity<Account>().Property(p => p.Password)
+                .IsRequired()
+                .HasMaxLength(10);
+                //Passwords are required and have a maximum length of 10
+
+            modelBuilder.Entity<Character>().Property(p => p.Name)
+                .IsRequired()
+                .HasMaxLength(20);
+
+            //Table per hierarchhy for Character
+            modelBuilder.Entity<Character>()
+                .Map<PlayerCharacter>(m => m.Requires("Type").HasValue("PlayerCharacter"))
+                .Map<Npc>(m => m.Requires("Type").HasValue("Npc"));
+
+            base.OnModelCreating(modelBuilder);
+        }
+
+        //public SandDbContext() : base("Data Source=5.135.239.4;" +
+        //                              "Initial Catalog=TestDb;" +
+        //                              "Persist Security Info=True;" +
+        //                              "MultipleActiveResultSets=True;" +
+        //                              "App=EntityFramework;User ID=testor;" +
+        //                              "Password=longpass!3693"
+        //    ) {}
+    }
+}
