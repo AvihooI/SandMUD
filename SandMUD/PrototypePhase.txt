@@ -11,21 +11,18 @@ SandDataGenerator:
 	c) will require re-implementation to work more efficiently
 	d) needs to be renamed to SandANSI
 
-SandDataProcessor: 
-	a) works as expected
-	b) very premature at the moment and requires more understanding of its responsibilities
-	c) should be dropped because the issues it solves can be addressed with LINQ
-
 SandModel:
 	a) contains the mud model entities
+	b) needs to be finalized
 
 SandPersistence:
 	a) needs some thinking as to what exactly its responsibilities need to be
-	b) will use the ESENT library via a PersistentDictionary 
+	b) uses entity framework
+	c) proper credentials needed for remote DB
+	d) further define the entities using the fluent api
 
 Solution wide points:
 
 a) SandDataGenerator and SandDataProcessor need to be unified to a single project called SandData (though keep their namespaces)
-b) Projects need to have a shared namespace called "SandMUD.SandInfrastructure" which basically encompasses the most bottom layer in the MUD system
-c) Should consider a persistence system under the infrastructure layer => A SandPersistence project
+b) Should consider a persistence system under the infrastructure layer => A SandPersistence project - SOLVED WITH entity framework
 d) Once the infrastructure layer is done (the useful code is refactored, extracted, properly documented), the prototyping phase will be over and the modelling phase will begin

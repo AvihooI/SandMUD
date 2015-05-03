@@ -4,7 +4,7 @@ namespace SandPersistenceTest
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
             using (var db = new SandDbContext())
             {
@@ -12,6 +12,8 @@ namespace SandPersistenceTest
 
                 account.Username = "AvihooI";
                 account.Password = "blarg";
+
+                db.Accounts.Add(account);
 
                 db.SaveChanges();
             }

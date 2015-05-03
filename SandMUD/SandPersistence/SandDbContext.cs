@@ -33,8 +33,6 @@ namespace SandPersistence
             modelBuilder.Entity<Character>()
                 .Map<PlayerCharacter>(m => m.Requires("Type").HasValue("PlayerCharacter"))
                 .Map<Npc>(m => m.Requires("Type").HasValue("Npc"));
-
-            base.OnModelCreating(modelBuilder);
         }
     }
 }
