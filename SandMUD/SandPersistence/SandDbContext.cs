@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using SandModel;
 
 namespace SandPersistence
@@ -20,11 +19,11 @@ namespace SandPersistence
             modelBuilder.Entity<Account>().Property(p => p.Username)
                 .IsRequired()
                 .HasMaxLength(15);
-                //Usernames are required and have a maximum length of 15
+            //Usernames are required and have a maximum length of 15
             modelBuilder.Entity<Account>().Property(p => p.Password)
                 .IsRequired()
                 .HasMaxLength(10);
-                //Passwords are required and have a maximum length of 10
+            //Passwords are required and have a maximum length of 10
 
             modelBuilder.Entity<Character>().Property(p => p.Name)
                 .IsRequired()
@@ -37,13 +36,5 @@ namespace SandPersistence
 
             base.OnModelCreating(modelBuilder);
         }
-
-        //public SandDbContext() : base("Data Source=5.135.239.4;" +
-        //                              "Initial Catalog=TestDb;" +
-        //                              "Persist Security Info=True;" +
-        //                              "MultipleActiveResultSets=True;" +
-        //                              "App=EntityFramework;User ID=testor;" +
-        //                              "Password=longpass!3693"
-        //    ) {}
     }
 }

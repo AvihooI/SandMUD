@@ -1,6 +1,4 @@
-﻿using System.Linq.Expressions;
-
-namespace SandModel
+﻿namespace SandModel
 {
     public class InventoryItem //This defines a concrete item used by someone or placed somewhere
     {
