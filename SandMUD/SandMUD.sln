@@ -9,13 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Process", "Process", "{D2CB
 		PrototypePhase.txt = PrototypePhase.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandTcpServer", "SandTcpServer\SandTcpServer.csproj", "{AFB0A7E3-F00B-4032-8A61-A65032D70F26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sand.TcpServer", "Sand.TcpServer\Sand.TcpServer.csproj", "{AFB0A7E3-F00B-4032-8A61-A65032D70F26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandPersistence", "SandPersistence\SandPersistence.csproj", "{D46E5624-9D24-4CB1-8100-6A7E3B538101}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sand.Persistence", "Sand.Persistence\Sand.Persistence.csproj", "{D46E5624-9D24-4CB1-8100-6A7E3B538101}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandModel", "SandModel\SandModel.csproj", "{71F71375-C94D-4809-AB04-454564FBA944}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sand.Model", "Sand.Model\Sand.Model.csproj", "{71F71375-C94D-4809-AB04-454564FBA944}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandAnsi", "SandANSI\SandAnsi.csproj", "{66450091-084A-43B0-A4F3-F9AFA8D5E3CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sand.Ansi", "Sand.Ansi\Sand.Ansi.csproj", "{66450091-084A-43B0-A4F3-F9AFA8D5E3CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
