@@ -3,7 +3,7 @@
 namespace SandModel
 {
     //DONE
-    public class Room
+    public class Room: IHasInventory
     {
         public int Id { get; set; }
         public string Name { get; set; }

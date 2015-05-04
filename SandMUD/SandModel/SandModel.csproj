@@ -31,11 +31,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="IHasInventory.cs" />
     <Compile Include="InventoryItem.cs" />
     <Compile Include="TemplateItem.cs" />
     <Compile Include="Npc.cs" />

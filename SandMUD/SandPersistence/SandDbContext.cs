@@ -19,6 +19,9 @@ namespace SandPersistence
             modelBuilder.Entity<Account>().Property(p => p.Username)
                 .IsRequired()
                 .HasMaxLength(15);
+
+            modelBuilder.Entity<Account>().HasKey(p => p.Username); //Make usernames unique
+
             //Usernames are required and have a maximum length of 15
             modelBuilder.Entity<Account>().Property(p => p.Password)
                 .IsRequired()
@@ -29,10 +32,20 @@ namespace SandPersistence
                 .IsRequired()
                 .HasMaxLength(20);
 
-            //Table per hierarchhy for Character
+            modelBuilder.Entity<Character>().Property(p => p.ShortName)
+                .HasMaxLength(15);
+
+            //Table per hierarchy for Character
             modelBuilder.Entity<Character>()
                 .Map<PlayerCharacter>(m => m.Requires("Type").HasValue("PlayerCharacter"))
                 .Map<Npc>(m => m.Requires("Type").HasValue("Npc"));
+
+            modelBuilder.Entity<TemplateItem>().Property(p => p.ShortName)
+                .HasMaxLength(15);
+
+            modelBuilder.Entity<TemplateItem>().Property(p => p.Name)
+                .IsRequired()
+                .HasMaxLength(20);
         }
     }
 }

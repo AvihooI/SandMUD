@@ -25,7 +25,7 @@
     public class TemplateItem //This defines a template
     {
         public int Id { get; set; }
-        public string Alias { get; set; }
+        public string ShortName { get; set; }
         public string Name { get; set; }
         public bool Stationary { get; set; } //Indicates if the item can be carried by a character or not 
         public ItemCategory Type { get; set; }
